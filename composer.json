@@ -1,8 +1,16 @@
 {
   "name": "vml/enterprise-profile",
   "type": "drupal-profile",
+  "description": "Enterprise Profile",
+  "license": "GPL-2.0-or-later",
   "minimum-stability": "dev",
   "prefer-stable": true,
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://packages.drupal.org/8"
+    }
+  ],
   "require": {
     "drupal/core-recommended": "^11",
     "drupal/config_split": "*",
@@ -17,6 +25,14 @@
       "docroot/profiles/custom/enterprise_profile": [
         "type:drupal-profile"
       ]
+    }
+  },
+  "require-dev": {
+    "phpro/grumphp": "^2.10"
+  },
+  "config": {
+    "allow-plugins": {
+      "phpro/grumphp": true
     }
   }
 }

@@ -1,0 +1,53 @@
+# grumphp.yml
+grumphp:
+  hooks_dir: ~
+  git_hook_variables:
+    EXEC_GRUMPHP_COMMAND: exec
+  parallel:
+      enabled: true
+      max_workers: 32
+  tasks:
+    composer:
+      file: composer.json
+    yamllint:
+      whitelist_patterns: ["**/*.yml"]
+      ignore_patterns: []
+      object_support: false
+      exception_on_invalid_type: false
+      parse_constant: false
+      parse_custom_tags: false
+    phpcs:
+      standard:
+        - vendor/drupal/coder/coder_sniffer/Drupal
+        - vendor/drupal/coder/coder_sniffer/DrupalPractice
+      triggered_by:
+        - php
+        - module
+        - inc
+      ignore_patterns:
+        - cfg/
+        - load.environment.php
+      whitelist_patterns: ["**/*.php", "**/*.php"]
+    phpstan:
+      configuration: phpstan.neon
+      level: null
+      force_patterns: []
+      ignore_patterns: []
+      triggered_by: ['php', 'module', 'inc']
+      memory_limit: "-1"
+      use_grumphp_paths: true
+    git_branch_name:
+      whitelist:
+          - "feature/*"
+          - "bugfix/*"
+          - "task/*"
+      blacklist:
+          - "develop"
+          - "development"
+          - "master"
+          - "main"
+      additional_modifiers: ''
+      allow_detached_head: true
+    phpmd:
+      whitelist_patterns: ["**/*.php"]
+      ruleset: [cleancode, codesize, controversial, design, naming, unusedcode]
