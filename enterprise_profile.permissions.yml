@@ -1,0 +1,8 @@
+administrator:
+  - 'administer site configuration'
+  - 'administer users'
+  - 'bypass node access'
+content_editor:
+  - 'create article content'
+  - 'edit own article content'
+  - 'view published content'

@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * Implements hook_install().
+ */
+function enterprise_profile_install() {
+  // Enable necessary modules.
+  $modules = [
+    'config_split',
+    'pathauto',
+    'admin_toolbar',
+    'metatag',
+    'redirect',
+    'token',
+  ];
+  \Drupal::service('module_installer')->install($modules);
+
+  // Set default site name.
+  \Drupal::configFactory()->getEditable('system.site')
+    ->set('name', 'Enterprise Drupal Site')
+    ->save();
+}

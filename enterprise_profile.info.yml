@@ -1,0 +1,12 @@
+name: 'Enterprise Profile'
+type: profile
+description: 'Standardized install profile for our Drupal projects.'
+core_version_requirement: ^11
+install: []
+dependencies:
+  - config_split
+  - pathauto
+  - admin_toolbar
+  - metatag
+  - redirect
+  - token

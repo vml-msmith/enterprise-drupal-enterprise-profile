@@ -1,0 +1,22 @@
+{
+  "name": "vml/enterprise-profile",
+  "type": "drupal-profile",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "drupal/core-recommended": "^11",
+    "drupal/config_split": "*",
+    "drupal/pathauto": "*",
+    "drupal/admin_toolbar": "*",
+    "drupal/metatag": "*",
+    "drupal/redirect": "*",
+    "drupal/token": "*"
+  },
+  "extra": {
+    "installer-paths": {
+      "docroot/profiles/custom/enterprise_profile": [
+        "type:drupal-profile"
+      ]
+    }
+  }
+}
